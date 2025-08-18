@@ -1,8 +1,13 @@
 import api from "./api.js";
 
 const ui = {
+  limparFormulario() {
+    document.getElementById("pensamento-form").reset();
+  },
+
   async renderizarPensamentos() {
     const listaPensamentos = document.getElementById("lista-pensamentos");
+    listaPensamentos.innerHTML = "";
 
     try {
       const pensamentos = await api.buscarPensamentos();
